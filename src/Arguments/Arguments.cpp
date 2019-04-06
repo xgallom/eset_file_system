@@ -5,7 +5,6 @@
 #include "Arguments.h"
 
 #include "ArgumentsConfig.h"
-#include "ArgumentsException.h"
 
 namespace Arguments
 {

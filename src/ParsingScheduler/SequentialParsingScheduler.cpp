@@ -3,7 +3,6 @@
 //
 
 #include "SequentialParsingScheduler.h"
-#include "FileParser/FileParser.h"
 
 namespace ParsingScheduler
 {
