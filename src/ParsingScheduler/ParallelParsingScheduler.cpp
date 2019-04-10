@@ -48,8 +48,12 @@ namespace ParsingScheduler
 				m_threadInputs[threadIndex] = nextFileName();
 
 				m_threadFlags.setFlagsForThread(threadIndex, ThreadFlags::DataReady);
+
+				if(ParsingScheduler::isFinished())
+					disableRunFlag();
 			}
 		}
+
 		return result;
 	}
 
@@ -70,8 +74,10 @@ namespace ParsingScheduler
 
 		scheduler->m_threadFlags.clearFlagsForThread(index, ThreadFlags::Processing);
 
-		while(scheduler->m_runFlag.load(std::memory_order_relaxed)) {
-			const auto threadFlags = scheduler->m_threadFlags.flagsForThread(index);
+		ThreadFlags::Enum threadFlags = ThreadFlags::WaitingForData;
+
+		while(scheduler->m_runFlag.load(std::memory_order_relaxed) || threadFlags) {
+			threadFlags = scheduler->m_threadFlags.flagsForThread(index);
 
 			if(threadFlags == ThreadFlags::DataReady) {
 				if(fileParser.isFinished()) {
