@@ -41,6 +41,7 @@ set(files
         src/FileParser/SearchIndex.cpp src/FileParser/SearchIndex.h
         src/FileParser/SuffixWaitingQueue.cpp src/FileParser/SuffixWaitingQueue.h
         src/ParsingScheduler/ParallelParsingScheduler.cpp src/ParsingScheduler/ParallelParsingScheduler.h
+        src/ParsingScheduler/ParallelParsingSchedulerThreadFlags.cpp src/ParsingScheduler/ParallelParsingSchedulerThreadFlags.h
         src/ParsingScheduler/ParsingResult.cpp src/ParsingScheduler/ParsingResult.h
         src/ParsingScheduler/ParsingScheduler.cpp src/ParsingScheduler/ParsingScheduler.h
         src/ParsingScheduler/ParsingSchedulerBuilder.cpp src/ParsingScheduler/ParsingSchedulerBuilder.h
@@ -50,7 +51,7 @@ set(files
         src/OutputPresenter.cpp src/OutputPresenter.h
         src/Application.cpp src/Application.h
         src/main.cpp
-        src/ParsingScheduler/ParallelParsingSchedulerThreadFlags.h src/ParsingScheduler/ParallelParsingSchedulerThreadFlags.cpp)
+        )
 
 add_executable(eset_file_system ${files})
 
