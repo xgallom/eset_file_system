@@ -23,8 +23,8 @@ namespace ParsingScheduler
 		static constexpr Enum DataReady = Processing;
 
 		static constexpr uint32_t
-				BitOffset = 1,
-				BitCount = 1 << BitOffset;
+				BitOffset = 1U,
+				BitCount = 1U << BitOffset;
 
 		static constexpr Enum BitMask = IntermediateResults;
 

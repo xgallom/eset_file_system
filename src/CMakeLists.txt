@@ -1,0 +1,6 @@
+add_subdirectory(utility)
+add_subdirectory(arguments)
+add_subdirectory(file_indexer)
+add_subdirectory(file_parser)
+add_subdirectory(parsing_scheduler)
+add_subdirectory(eset_file_system)

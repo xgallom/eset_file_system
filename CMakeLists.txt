@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.2)
 project(eset_file_system)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -24,9 +24,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
 -pedantic \
 ")
 
-add_subdirectory(utility)
-add_subdirectory(arguments)
-add_subdirectory(file_indexer)
-add_subdirectory(file_parser)
-add_subdirectory(parsing_scheduler)
-add_subdirectory(eset_file_system)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+add_subdirectory(src)
