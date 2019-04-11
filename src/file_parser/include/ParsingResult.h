@@ -16,7 +16,6 @@ namespace ParsingScheduler
 		ParsingResult() = default;
 		ParsingResult(const std::string &a_fileName, std::vector<FileParser::SearchIndex> &&a_index);
 
-		void setFileName(const std::string &a_fileName);
 		std::string fileName() const;
 		const std::vector<FileParser::SearchIndex> &index() const;
 		std::vector<FileParser::SearchIndex> &index();

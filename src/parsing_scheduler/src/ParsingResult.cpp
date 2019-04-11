@@ -11,11 +11,6 @@ namespace ParsingScheduler
 			m_index(std::move(a_index))
 	{}
 
-	void ParsingResult::setFileName(const std::string &a_fileName)
-	{
-		m_fileName = a_fileName;
-	}
-
 	std::string ParsingResult::fileName() const
 	{
 		return m_fileName;
