@@ -2,7 +2,7 @@
 // Created by xgallom on 4/6/19.
 //
 
-#include "ParallelParsingSchedulerThreadFlags.h"
+#include "ParsingSchedulerThreadFlags.h"
 
 namespace ParsingScheduler
 {

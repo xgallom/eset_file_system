@@ -5,6 +5,8 @@
 #ifndef ESET_FILE_SYSTEM_OPTIONAL_H
 #define ESET_FILE_SYSTEM_OPTIONAL_H
 
+#include <utility>
+
 template<typename T>
 class Optional {
 public:
@@ -13,6 +15,11 @@ public:
 	explicit constexpr Optional(const T &a_value) :
 			m_valid(true),
 			m_value(a_value)
+	{}
+
+	explicit constexpr Optional(T &&a_value) :
+			m_valid(true),
+			m_value(std::move(a_value))
 	{}
 
 	constexpr const T &operator()() const
