@@ -13,7 +13,7 @@ Usage:
 Arguments:
   <target_path> - A path to search in for the key, can be either a single file, or a directory
                   If it's a directory, it will be scanned recursively
-  <key>         - A string literal to search for in the path specified by the search_path
+  <key>         - A string literal to search for in the path specified by the target_path
 
 Options:
   -p            - Runs the application in multi-threaded processing mode

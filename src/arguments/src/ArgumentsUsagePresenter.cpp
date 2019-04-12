@@ -17,7 +17,7 @@ namespace OutputPresenter
 			"Arguments:\n"
 			"  <target_path> - A path to search in for the key, can be either a single file, or a directory\n"
 			"                  If it's a directory, it will be scanned recursively\n"
-			"  <key>         - A string literal to search for in the path specified by the search_path\n"
+			"  <key>         - A string literal to search for in the path specified by the target_path\n"
 			"\n"
 			"Options:\n"
 			"  -p            - Runs the application in multi-threaded processing mode\n"
