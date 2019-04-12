@@ -20,13 +20,14 @@ namespace FileParser
 
 	void FileParserImpl::construct()
 	{
-		m_validIndexes.reserve(IndexesBuffer);
 		m_currentPrefix.reserve(SearchIndex::PrefixSize + 1);
 	}
 
 	std::vector<SearchIndex> FileParserImpl::parseWithKey(const std::string &key)
 	{
 		try {
+			m_validIndexes.reserve(IndexesBuffer);
+
 			if(prepareNextChunk())
 				processNewChunk(key);
 
@@ -40,6 +41,7 @@ namespace FileParser
 		}
 		catch(Exception &fileParserException) {
 			OutputPresenter::presentException(fileParserException);
+			m_isFinished = true;
 		}
 
 		return std::move(m_validIndexes);
@@ -76,7 +78,7 @@ namespace FileParser
 	bool FileParserImpl::prepareNextChunk()
 	{
 		if(m_chunkIndex == m_dataChunk.size()) {
-			// Move current position counter to the beginning of the next chunk of data
+			// Move current chunk position counter to the beginning of the next chunk of data
 			m_chunkPosition += m_dataChunk.size();
 			m_chunkIndex = 0;
 
@@ -98,9 +100,8 @@ namespace FileParser
 	{
 		const auto size = m_dataChunk.size();
 
-		for(; m_chunkIndex < size; ++m_chunkIndex) {
+		for(; m_chunkIndex < size; ++m_chunkIndex)
 			processCharacter(m_chunkPosition + m_chunkIndex, m_dataChunk[m_chunkIndex], key);
-		}
 	}
 
 	void FileParserImpl::processCharacter(size_t filePosition, char c, const std::string &key)

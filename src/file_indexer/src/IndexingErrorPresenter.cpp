@@ -8,7 +8,7 @@
 
 namespace OutputPresenter
 {
-	static constexpr char errorTexts[FileIndexer::Error::Size][48] = {
+	static constexpr char ErrorTexts[FileIndexer::Error::Size][48] = {
 			"Stat call failed",
 			"Directory could not be read\n",
 			"Symbolic link not followed/file does not exist\n",
@@ -17,6 +17,6 @@ namespace OutputPresenter
 
 	void presentIndexingError(const std::string &filePath, FileIndexer::Error::Enum errorType)
 	{
-		std::cerr << filePath << ": " << errorTexts[errorType] << "\n";
+		std::cerr << filePath << ": " << ErrorTexts[errorType] << "\n";
 	}
 }
