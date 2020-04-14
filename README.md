@@ -68,7 +68,7 @@ sudo cp build/release/bin/eset_file_system /usr/local/bin
 I did not actually document the API, I just generated doxygen to
 visualize dependencies, call and inheritance graphs.
 
-Current documentation is also available online [here](http://vesmir.xgallom.sk/ftp/eset_file_system).
+Current documentation is also available online [here](http://vesmir.xgallom.sk/docs/eset_file_system).
 
 To build the documentation, just run
 
